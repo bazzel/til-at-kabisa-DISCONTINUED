@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Channel < ApplicationRecord
   has_many :posts, dependent: :restrict_with_error
 

@@ -1,4 +1,11 @@
-<h2><%= post.title %></h2>
-<%= post.body.html_safe %>
-<%= t('time_ago', time: time_ago_in_words(post.created_at)) %>
-<hr>
+<div class="card my-5 shadow-sm">
+  <div class="card-body">
+    <h2 class="card-title"><%= post.title %></h2>
+    <div class="card-text"><%= post.body.html_safe %></div>
+    <footer class="blockquote-footer my-0"><%= post.author.name %></footer>
+  </div>
+  <div class="card-footer text-muted d-flex justify-content-between">
+    <div>Tagged with: <%= post.channel.name %></div>
+    <div><%= t('time_ago', time: time_ago_in_words(post.created_at)) %></div>
+  </div>
+</div>

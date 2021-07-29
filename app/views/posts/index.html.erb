@@ -1,6 +1,7 @@
-<p id="notice"><%= notice %></p>
+<%= render 'hero' %>
 
-<h1 class="display-1">Today I Learned</h1>
-<div class="display-6">at Kabisa</div>
+<div class="container">
+  <%= render @posts %>
+</div>
 
-<%= render @posts %>
+

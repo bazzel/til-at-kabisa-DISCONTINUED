@@ -1,0 +1,33 @@
+section.hero {
+  @extend .position-relative;
+  // @extend .text-center;
+  @extend .text-white;
+
+  > img {
+    @extend .w-100;
+  }
+
+  .content {
+    @extend .position-absolute;
+    @extend .top-0;
+    @extend .end-0;
+    @extend .bottom-0;
+    @extend .start-0;
+    @extend .d-flex;
+    @extend .justify-content-center;
+    @extend .align-items-center;
+    @extend .flex-column;
+
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 60%);
+
+    h1 {
+      @extend .display-1;
+      margin-top: -1rem;
+      margin-bottom: 0;
+    }
+
+    span {
+      @extend .display-5;
+    }
+  }
+}

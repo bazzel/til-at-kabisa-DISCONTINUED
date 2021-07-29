@@ -1,16 +1,16 @@
-<nav class="navbar navbar-light bg-light fixed-top d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+<%= tag.nav(class: "navbar navbar-dark fixed-top", data: { controller: 'navbar', action: "scroll@window->navbar#waterfall", "navbar-waterfall-class": "waterfall" }) do %>
   <div class="container">
-    <%= link_to root_path, class: "d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none" do %>
-      <%= image_tag 'logo', width: 40 %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag 'logo.png', width: 40 %>
       <span class="fs-4">Today I Learned - </span>
-      <span class="fs-5 fw-light text-muted">&nbsp;@Kabisa</span>
+      <span class="fs-5 fw-light">&nbsp;@Kabisa</span>
     <% end %>
 
 
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <%= link_to "Admin", admin_root_path, class: "btn btn-outline-secondary", data: { turbo: false } %>
+        <%= link_to "Admin", admin_root_path, class: "btn btn-outline-light", data: { turbo: false } %>
       </li>
     </ul>
   </div>
-</nav>
+<% end %>

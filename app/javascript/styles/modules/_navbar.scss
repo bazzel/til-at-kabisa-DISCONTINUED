@@ -1,0 +1,8 @@
+nav.navbar {
+  transition: all 0.3s;
+
+  &.waterfall {
+    @extend .shadow;
+    @extend .bg-dark;
+  }
+}
