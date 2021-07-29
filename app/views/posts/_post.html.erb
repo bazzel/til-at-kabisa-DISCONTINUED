@@ -1,4 +1,4 @@
 <h2><%= post.title %></h2>
 <%= post.body.html_safe %>
-<%= time_ago_in_words(post.created_at) %>
+<%= t('time_ago', time: time_ago_in_words(post.created_at)) %>
 <hr>

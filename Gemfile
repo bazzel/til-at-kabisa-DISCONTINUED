@@ -34,8 +34,7 @@ gem "hotwire-rails" # HTML over the wire.
 gem "administrate" # A framework for creating flexible, powerful admin dashboards in Rails.
 gem "dotenv-rails", "~> 2.1", ">= 2.1.1" # Autoload dotenv in Rails.
 gem "trix"
-# gem "trix-rails", require: "trix" # A rich text editor for everyday writing
-# gem "administrate-field-trix" # A plugin to use the Trix WYSIWYG editor within in Administrate.
+gem "faker"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
