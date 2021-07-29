@@ -13,7 +13,7 @@ class PostDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     slug: Field::String,
-    body: Field::Text,
+    body: TrixField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
