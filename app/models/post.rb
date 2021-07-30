@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Post < ApplicationRecord
-  belongs_to :channel
-  belongs_to :author
+  belongs_to :channel, counter_cache: true
+  belongs_to :author, counter_cache: true
 
   validates :title, presence: true
   validates :body, presence: true

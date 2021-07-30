@@ -10,7 +10,7 @@ class ChannelDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    # posts: Field::HasMany,
+    posts: Field::HasMany,
     id: Field::Number,
     name: Field::String,
     created_at: Field::DateTime,
@@ -25,7 +25,7 @@ class ChannelDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     name
-    created_at
+    posts
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -33,8 +33,6 @@ class ChannelDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     name
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES

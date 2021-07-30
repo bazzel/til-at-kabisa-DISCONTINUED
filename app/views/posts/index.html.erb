@@ -1,17 +1,3 @@
-<%= render 'hero' %>
+<%= render 'static_hero' %>
 
-<div class="container">
-  <%= turbo_frame_tag "results-#{@posts.current_page}" do %>
-    <%= render @posts %>
-
-    <%- if @posts.next_page %>
-      <%= turbo_frame_tag "results-#{@posts.next_page}", loading: :lazy, src: next_page_path(@posts) do %>
-        <div class="d-flex justify-content-center">
-          <div class="spinner-grow text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  <% end %>
-</div>
+<%= render 'results', posts: @posts %>

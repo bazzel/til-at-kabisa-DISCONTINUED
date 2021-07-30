@@ -6,8 +6,8 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @posts = Post
+    .includes(:author, channel: [:posts])
     .order(created_at: :desc)
-    .includes(:author, :channel)
     .page(params[:page])
   end
 

@@ -12,6 +12,7 @@ class AuthorDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
+    posts: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -24,7 +25,7 @@ class AuthorDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     name
-    created_at
+    posts
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -32,8 +33,6 @@ class AuthorDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     name
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES

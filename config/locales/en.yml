@@ -32,3 +32,4 @@
 en:
   time_ago: "%{time} ago"
   written_on_and_by: "Written on %{date} by %{author}"
+  show_channel_posts_html: "Show me only <i>%{channel_name}</i> TIL's (%{posts_count})"
