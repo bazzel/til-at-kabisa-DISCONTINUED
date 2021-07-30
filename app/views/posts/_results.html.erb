@@ -1,6 +1,7 @@
 <div class="container">
   <%= turbo_frame_tag "results-#{posts.current_page}" do %>
     <%= render posts %>
+    <script>twttr.widgets.load();</script>
 
     <%- if posts.next_page %>
       <%= turbo_frame_tag "results-#{posts.next_page}", loading: :lazy, src: next_page_path(posts) do %>

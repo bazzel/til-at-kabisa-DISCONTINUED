@@ -6,23 +6,25 @@
     <div class="card-text"><%= post.body.html_safe %></div>
     <footer class="blockquote-footer my-0"><%= post.author.name %></footer>
   </div>
-  <div class="card-footer text-muted d-flex justify-content-between">
-    <div>
-      Tagged with:
-      <%= link_to post.channel.name,
-                  channel_path(post.channel),
-                  title: t("show_channel_posts_html",
-                           channel_name: post.channel.name,
-                           posts_count: post.channel.posts.size),
-                  data: { "bs-toggle": :tooltip, "bs-html": true, turbo: false } %>
-    </div>
-    <div>
-      <%= tweet_button post %>
-    </div>
-    <div>
-      <%= tag.span(title: t("written_on_and_by", date: post.created_at.to_date.to_s(:short), author: post.author.name), data: { 'bs-toggle': :tooltip }) do %>
-        <%= t('time_ago', time: time_ago_in_words(post.created_at)) %>
-      <% end %>
+  <div class="card-footer text-muted">
+    <div class="row">
+      <div class="col">
+        <i class="fas fa-tag"></i>
+        <%= link_to post.channel.name,
+                    channel_path(post.channel),
+                    title: t("show_channel_posts_html",
+                            channel_name: post.channel.name,
+                            posts_count: post.channel.posts.size),
+                    data: { "bs-toggle": :tooltip, "bs-html": true, turbo: false } %>
+      </div>
+      <div class="col text-center">
+        <%= tweet_button post %>
+      </div>
+      <div class="col text-end">
+        <%= tag.span(title: t("written_on_and_by", date: post.created_at.to_date.to_s(:short), author: post.author.name), data: { 'bs-toggle': :tooltip }) do %>
+          <%= t('time_ago', time: time_ago_in_words(post.created_at)) %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
