@@ -31,3 +31,4 @@
 
 en:
   time_ago: "%{time} ago"
+  written_on_and_by: "Written on %{date} by %{author}"

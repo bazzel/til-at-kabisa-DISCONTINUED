@@ -6,6 +6,10 @@
   </div>
   <div class="card-footer text-muted d-flex justify-content-between">
     <div>Tagged with: <%= post.channel.name %></div>
-    <div><%= t('time_ago', time: time_ago_in_words(post.created_at)) %></div>
+    <div>
+      <%= tag.span(title: t('written_on_and_by', date: post.created_at.to_date.to_s(:short), author: post.author.name), data: { 'bs-toggle': :tooltip }) do %>
+        <%= t('time_ago', time: time_ago_in_words(post.created_at)) %>
+      <% end %>
+    </div>
   </div>
 </div>
