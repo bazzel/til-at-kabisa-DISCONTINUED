@@ -5,6 +5,7 @@ section.hero {
 
   > img {
     @extend .w-100;
+    // visibility: hidden;
   }
 
   .content {
@@ -18,7 +19,11 @@ section.hero {
     @extend .align-items-center;
     @extend .flex-column;
 
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 60%);
+    text-shadow: $hero-text-shadow;
+
+    img {
+      filter: drop-shadow($hero-drop-shadow);
+    }
 
     h1 {
       @extend .display-1;

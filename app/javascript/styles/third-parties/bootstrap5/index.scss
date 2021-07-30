@@ -7,14 +7,14 @@ $secondary: #91E6C8;
 $light: #f2f2f2;
 // $dark: #343a40;
 
-@import "./configuration";
 @import "./custom-variables";
+@import "./configuration";
 @import "./layout-and-components";
 @import "./helpers";
 @import "./utilities";
 
-@each $key, $value in $theme-colors {
-  .bg-#{$key} {
-    color: color-contrast($value);
-  }
-}
+// @each $key, $value in $theme-colors {
+//   .bg-#{$key} {
+//     color: color-contrast($value);
+//   }
+// }
