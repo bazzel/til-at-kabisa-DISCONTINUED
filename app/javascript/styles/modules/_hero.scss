@@ -22,12 +22,14 @@ section.hero {
 
     h1 {
       @extend .display-1;
+      @extend .text-uppercase;
       margin-top: -1rem;
       margin-bottom: 0;
     }
 
     span {
       @extend .display-5;
+      @extend .text-lowercase;
     }
   }
 }
