@@ -2,14 +2,14 @@
   <div class="container">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag 'logo.png', width: 40 %>
-      <span class="fs-4">Today I Learned - </span>
-      <span class="fs-5 fw-light">&nbsp;@Kabisa</span>
+      <span class="fs-4">Today I Learned -</span>
+      <span class="fs-5 fw-light">@Kabisa</span>
     <% end %>
 
 
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <%= link_to "Admin", admin_root_path, class: "btn btn-outline-light", data: { turbo: false } %>
+        <%= link_to "Admin", admin_root_path, class: "btn btn-outline-light", data: { turbo: false, 'bs-toggle': :tooltip, 'bs-placement': :bottom }, title: "Restricted  Area" %>
       </li>
     </ul>
   </div>

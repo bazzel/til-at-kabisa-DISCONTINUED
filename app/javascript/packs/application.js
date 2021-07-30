@@ -8,6 +8,11 @@ import "@hotwired/turbo-rails";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import "controllers";
+import * as bs5 from "bs5";
 
 Rails.start();
 ActiveStorage.start();
+
+document.addEventListener("turbo:load", function () {
+  bs5.start();
+});
