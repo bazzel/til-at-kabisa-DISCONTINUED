@@ -1,6 +1,8 @@
 <div class="card my-5 shadow-sm animate__animated animate__fadeIn">
   <div class="card-body">
-    <h2 class="card-title"><%= post.title %></h2>
+    <h2 class="card-title">
+      <%= link_to post.title, post, data: { turbo: false } %>
+    </h2>
     <div class="card-text"><%= post.body.html_safe %></div>
     <footer class="blockquote-footer my-0"><%= post.author.name %></footer>
   </div>
@@ -9,13 +11,16 @@
       Tagged with:
       <%= link_to post.channel.name,
                   channel_path(post.channel),
-                  title: t('show_channel_posts_html',
+                  title: t("show_channel_posts_html",
                            channel_name: post.channel.name,
                            posts_count: post.channel.posts.size),
-                  data: { 'bs-toggle': :tooltip, 'bs-html': true, turbo: false } %>
+                  data: { "bs-toggle": :tooltip, "bs-html": true, turbo: false } %>
     </div>
     <div>
-      <%= tag.span(title: t('written_on_and_by', date: post.created_at.to_date.to_s(:short), author: post.author.name), data: { 'bs-toggle': :tooltip }) do %>
+      <%= tweet_button post %>
+    </div>
+    <div>
+      <%= tag.span(title: t("written_on_and_by", date: post.created_at.to_date.to_s(:short), author: post.author.name), data: { 'bs-toggle': :tooltip }) do %>
         <%= t('time_ago', time: time_ago_in_words(post.created_at)) %>
       <% end %>
     </div>

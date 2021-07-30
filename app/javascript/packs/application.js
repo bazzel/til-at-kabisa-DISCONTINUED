@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import "controllers";
 import * as bs5 from "bs5";
+import "@fortawesome/fontawesome-free/css/all";
 
 Rails.start();
 ActiveStorage.start();
