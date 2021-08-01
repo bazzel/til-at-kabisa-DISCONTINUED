@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show ]
+  before_action :set_channel, only: %i[ index show ]
 
   # GET /posts or /posts.json
   def index
-    @posts = Post
-    .includes(:author, channel: [:posts])
-    .order(created_at: :desc)
-    .page(params[:page])
+    @posts = Post.includes(:author, channel: [:posts]).order(created_at: :desc)
+    @posts = @posts.where(channel: @channel) if params[:channel_id]
+    @posts = @posts.page(params[:page])
   end
 
   # GET /posts/1 or /posts/1.json
@@ -21,8 +21,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
-    def post_params
-      params.require(:post).permit(:title, :body)
+    def set_channel
+      @channel = Channel.find_by(slug: params[:channel_id])
     end
 end

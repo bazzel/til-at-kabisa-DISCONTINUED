@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     end
 
   resources :posts, only: [:index, :show]
-  resources :channels, only: [:show]
+  get "channels/:channel_id", to: "posts#index", as: "channel"
+  # resources :channels, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root to: "posts#index"
