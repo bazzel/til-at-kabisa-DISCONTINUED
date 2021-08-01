@@ -3,10 +3,12 @@ section.hero {
   // @extend .text-center;
   @extend .text-white;
 
-  > img {
-    @extend .w-100;
-    // visibility: hidden;
+  background: {
+    image: url('~hero.webp');
+    position: top;
+    size: cover;
   }
+  height: 30rem;
 
   .content {
     @extend .position-absolute;
