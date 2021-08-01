@@ -37,6 +37,7 @@ gem "trix"
 gem "faker"
 gem "kaminari" # Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated paginator for Rails 4+
 gem "rubocop-rails", require: false
+gem "view_component", require: "view_component/engine"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

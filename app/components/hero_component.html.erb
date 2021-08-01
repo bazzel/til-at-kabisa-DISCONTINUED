@@ -1,0 +1,12 @@
+<section class="hero">
+  <div class="content">
+    <%= image_tag 'logo.png', width: 160, class: logo_class %>
+    <%= tag.h1(class: h1_today_i_class) do %>
+      Today I <%= tag.div(class: h1_learned_class) { 'Learned' } %>
+    <% end %>
+
+    <% if subtitle %>
+      <%= tag.span(class: subtitle_class) { subtitle } %>
+    <% end %>
+  </div>
+</section>

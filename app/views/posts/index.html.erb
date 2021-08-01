@@ -1,3 +1,4 @@
-<%= render 'static_hero' %>
+<%- content_for :subtitle, @channel&.name || '@kabisa' %>
+<%- content_for :animated, @channel.blank? %>
 
 <%= render 'results', posts: @posts %>
