@@ -18,7 +18,7 @@ Channel.delete_all
   Channel.create(name: Faker::ProgrammingLanguage.name)
 end
 
-1000.times do
+1000.times do |n|
   channel = Channel.all.shuffle.sample
   author = Author.all.shuffle.sample
 
@@ -27,6 +27,6 @@ end
     body: Faker::Lorem.paragraphs(number: 4).map { |pr| "<p>#{pr}</p>" }.join,
     channel: channel,
     author: author,
-    created_at: rand(10).days.ago
+    created_at: n.days.ago
   )
 end
