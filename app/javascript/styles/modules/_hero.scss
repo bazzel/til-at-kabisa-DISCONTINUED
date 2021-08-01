@@ -1,6 +1,5 @@
 section.hero {
   @extend .position-relative;
-  // @extend .text-center;
   @extend .text-white;
 
   background: {
@@ -11,6 +10,7 @@ section.hero {
   height: 30rem;
 
   .content {
+    @extend .text-center;
     @extend .position-absolute;
     @extend .top-0;
     @extend .end-0;
