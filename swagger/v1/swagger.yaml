@@ -1,0 +1,80 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/posts.json":
+    parameters:
+    - name: include
+      in: query
+      required: false
+      description: include
+      schema:
+        type: string
+    - name: page
+      in: query
+      required: false
+      description: page
+      schema:
+        type: string
+    - name: per
+      in: query
+      required: false
+      description: per
+      schema:
+        type: string
+    get:
+      summary: list posts
+      responses:
+        '200':
+          description: successful
+  "/posts/{id}.json":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show post
+      responses:
+        '200':
+          description: successful
+  "/channels/{channel_id}.json":
+    parameters:
+    - name: channel_id
+      in: path
+      description: channel_id
+      required: true
+      schema:
+        type: string
+    - name: include
+      in: query
+      required: false
+      description: include
+      schema:
+        type: string
+    - name: page
+      in: query
+      required: false
+      description: page
+      schema:
+        type: string
+    - name: per
+      in: query
+      required: false
+      description: per
+      schema:
+        type: string
+    get:
+      summary: list posts for a given channel
+      responses:
+        '200':
+          description: successful
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
