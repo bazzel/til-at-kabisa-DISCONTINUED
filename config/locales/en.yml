@@ -33,3 +33,9 @@ en:
   time_ago: "%{time} ago"
   written_on_and_by: "Written on %{date} by %{author}"
   show_channel_posts_html: "Show me only <i>%{channel_name}</i> TIL's (%{posts_count})"
+  sidebar:
+    github_html: "Inspect the code on %{github_link}."
+    rest_api_html: >
+      We built %{github_link} with Ruby on Rails.<br/>
+      If you like you can create your own client and consume our REST API.<br/>
+      Get started by reading the %{swagger_link}.
