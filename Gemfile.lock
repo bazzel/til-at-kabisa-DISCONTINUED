@@ -159,8 +159,6 @@ GEM
     nokogiri (1.11.7)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
-    nokogiri (1.11.7-x86_64-darwin)
-      racc (~> 1.4)
     parallel (1.20.1)
     parser (3.0.2.0)
       ast (~> 2.4.1)
@@ -227,10 +225,6 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
-    rswag (2.4.0)
-      rswag-api (= 2.4.0)
-      rswag-specs (= 2.4.0)
-      rswag-ui (= 2.4.0)
     rswag-api (2.4.0)
       railties (>= 3.1, < 7.0)
     rswag-specs (2.4.0)
@@ -340,8 +334,9 @@ DEPENDENCIES
   rails (~> 6.1.4)
   redis (~> 4.0)
   rspec-rails
-  rswag
+  rswag-api
   rswag-specs
+  rswag-ui
   rubocop-performance
   rubocop-rails
   sass-rails (>= 6)
