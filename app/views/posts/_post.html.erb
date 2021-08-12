@@ -1,7 +1,7 @@
 <div class="card mb-5 shadow-sm">
   <div class="card-body">
     <h2 class="card-title">
-      <%= link_to post.title, post, data: { turbo: false } %>
+      <%= link_to_unless_current post.title, post, data: { turbo: false } %>
     </h2>
     <div class="card-text"><%= post.body.html_safe %></div>
     <footer class="blockquote-footer my-0"><%= post.author.name %></footer>
@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col">
         <i class="fas fa-tag"></i>
-        <%= link_to post.channel.name,
+        <%= link_to_unless_current post.channel.name,
                     channel_path(post.channel),
                     title: t("show_channel_posts_html",
                             channel_name: post.channel.name,
