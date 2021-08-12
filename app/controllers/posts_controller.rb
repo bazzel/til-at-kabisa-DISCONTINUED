@@ -14,9 +14,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json do
-        render jsonapi: @posts
-      end
+      format.json { render jsonapi: @posts }
     end
   end
 
@@ -24,9 +22,7 @@ class PostsController < ApplicationController
   def show
     respond_to do |format|
       format.html
-      format.json do
-        render jsonapi: @post
-      end
+      format.json { render jsonapi: @post }
     end
   end
 

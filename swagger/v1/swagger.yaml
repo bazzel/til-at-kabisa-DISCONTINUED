@@ -9,19 +9,19 @@ paths:
     - name: include
       in: query
       required: false
-      description: include
+      description: Include related resources, e.g. `include=author` or `include=author,channel`
       schema:
         type: string
     - name: page
       in: query
       required: false
-      description: page
+      description: 'Show a specific page (default: 1)'
       schema:
         type: string
     - name: per
       in: query
       required: false
-      description: per
+      description: Show more or less than 10 posts
       schema:
         type: string
     get:
@@ -29,12 +29,18 @@ paths:
       responses:
         '200':
           description: successful
-  "/posts/{id}.json":
+  "/posts/{slug}.json":
     parameters:
-    - name: id
+    - name: slug
       in: path
-      description: id
+      description: E.g. `5099-i-don-t-know`
       required: true
+      schema:
+        type: string
+    - name: include
+      in: query
+      required: false
+      description: Include related resources, e.g. `include=author` or `include=author,channel`
       schema:
         type: string
     get:
@@ -42,30 +48,38 @@ paths:
       responses:
         '200':
           description: successful
-  "/channels/{channel_id}.json":
+        '404':
+          description: not found
+  "/posts/random.json":
+    get:
+      summary: show a random post
+      responses:
+        '200':
+          description: successful
+  "/channels/{slug}.json":
     parameters:
-    - name: channel_id
+    - name: slug
       in: path
-      description: channel_id
+      description: E.g. `ruby`
       required: true
       schema:
         type: string
     - name: include
       in: query
       required: false
-      description: include
+      description: include related resources, e.g. `include=author` or `include=author,channel`
       schema:
         type: string
     - name: page
       in: query
       required: false
-      description: page
+      description: 'Show a specific page (default: 1)'
       schema:
         type: string
     - name: per
       in: query
       required: false
-      description: per
+      description: Show more or less than 10 posts
       schema:
         type: string
     get:
@@ -73,6 +87,8 @@ paths:
       responses:
         '200':
           description: successful
+        '404':
+          description: not found
 servers:
 - url: https://{defaultHost}
   variables:
