@@ -9,6 +9,10 @@ class Post < ApplicationRecord
 
   after_validation :set_slug, only: [:create, :update]
 
+  def self.random
+    order(Arel.sql("RANDOM()")).first
+  end
+
   def to_param
     "#{id}-#{slug}"
   end
