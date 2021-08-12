@@ -29,12 +29,7 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      id = params[:id]
-      @post = if id == "random"
-        Post.all.sample
-      else
-        Post.find(id)
-      end
+      @post = Post.find_by(id: params[:id]) || Post.all.sample
     end
 
     def set_channel
