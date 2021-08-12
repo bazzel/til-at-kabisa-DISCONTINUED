@@ -1,11 +1,11 @@
 import * as bootstrap from "bootstrap";
 
 function popoverify() {
-  document
-    .querySelectorAll('[data-bs-toggle="popover"]')
-    .forEach(function (popoverTriggerEl) {
-      new bootstrap.Popover(popoverTriggerEl);
-    });
+  new bootstrap.Popover(document.body, {
+    selector: '[data-bs-toggle="popover"]',
+    container: "body",
+    trigger: "focus",
+  });
 }
 
 function tooltipify() {

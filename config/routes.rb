@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   mount Rswag::Ui::Engine => "/api-docs"
   mount Rswag::Api::Engine => "/api-docs"
-  get "channels/show"
+
   namespace :admin do
       resources :posts
       resources :authors
@@ -12,7 +12,10 @@ Rails.application.routes.draw do
       root to: "posts#index"
     end
 
-  resources :posts, only: [:index, :show]
+  resources :posts, only: [:index, :show] do
+    get "random", on: :collection, as: "random"
+  end
+
   get "channels/:channel_id", to: "posts#index", as: "channel"
   # resources :channels, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

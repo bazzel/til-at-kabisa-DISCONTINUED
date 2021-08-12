@@ -1,6 +1,11 @@
 <nav class="position-fixed bottom-0 start-0 text-center">
   <ul class="list-unstyled m-0">
     <li class="p-1">
+      <%= link_to(random_posts_path, class: 'btn btn-link') do %>
+        <i class="fas fa-dice fa-2x"></i>
+      <% end %>
+    </li>
+    <li class="p-1">
       <%= button_tag(
         type: :button,
         class: 'btn btn-link',
