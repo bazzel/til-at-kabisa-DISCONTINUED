@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
 
   resources :posts, only: [:index, :show] do
-    get "random", on: :collection, as: "random"
+    get "random", on: :collection
   end
 
   get "channels/:channel_id", to: "posts#index", as: "channel"
