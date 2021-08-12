@@ -26,14 +26,15 @@ class PostsController < ApplicationController
     end
   end
 
-  def random
-    redirect_to Post.all.sample
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      id = params[:id]
+      @post = if id == "random"
+        Post.all.sample
+      else
+        Post.find(id)
+      end
     end
 
     def set_channel

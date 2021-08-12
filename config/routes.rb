@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
 
   resources :posts, only: [:index, :show] do
-    get "random", on: :collection
+    get ":id", on: :collection, to: "posts#show", as: "random", constraints: { id: "random" }
   end
 
   get "channels/:channel_id", to: "posts#index", as: "channel"
