@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
       resources :posts
-      resources :authors
       resources :channels
 
       root to: "posts#index"
@@ -17,8 +16,7 @@ Rails.application.routes.draw do
   end
 
   get "channels/:channel_id", to: "posts#index", as: "channel"
-  # resources :channels, only: [:show]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get "login/create", to: "logins#create", as: :create_login
 
   root to: "posts#index"
 end

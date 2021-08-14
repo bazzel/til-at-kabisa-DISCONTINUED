@@ -4,7 +4,17 @@
       <%= link_to_unless_current post.title, post, data: { turbo: false } %>
     </h2>
     <div class="card-text"><%= post.body.html_safe %></div>
-    <footer class="blockquote-footer my-0"><%= post.author.name %></footer>
+    <footer class="blockquote-footer my-0">
+      <%= tag.span(
+        title: image_tag(post.author.avatar_url, size: "32x32", class: "img-fluid rounded-circle"),
+        data: {
+          "bs-toggle": :tooltip,
+          "bs-html": true
+        }
+      ) do %>
+        <%= post.author.name %>
+      <% end %>
+    </footer>
   </div>
   <div class="card-footer text-muted">
     <div class="row">

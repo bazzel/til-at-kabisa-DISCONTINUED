@@ -35,5 +35,16 @@
         <i class="fas fa-tools fa-2x"></i>
       <% end %>
     </li>
+    <li class="p-1">
+      <% if current_user %>
+        <%= link_to admin_root_path, class: "btn btn-link" do %>
+          <i class="fas fa-user-lock fa-2x"></i>
+        <% end %>
+      <% else %>
+        <%= google_sign_in_button class: "btn btn-link", proceed_to: create_login_url, data: { turbo: false } do %>
+          <i class="fas fa-user-lock fa-2x text-primary text-opacity-25"></i>
+        <% end %>
+      <% end %>
+    </li>
   </ul>
 </nav>

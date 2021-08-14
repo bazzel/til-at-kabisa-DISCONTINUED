@@ -16,8 +16,8 @@ class PostDashboard < Administrate::BaseDashboard
     body: TrixField,
     author: Field::BelongsTo,
     channel: Field::BelongsTo,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    created_at: Field::Date,
+    updated_at: Field::Date,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,12 +26,10 @@ class PostDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    id
     title
-    slug
     author
     channel
-    body
+    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

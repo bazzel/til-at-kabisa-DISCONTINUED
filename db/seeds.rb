@@ -14,7 +14,11 @@ Author.delete_all
 Channel.delete_all
 
 25.times do
-  Author.create(name: Faker::Name.unique.name)
+  Author.create(
+    name: Faker::Name.unique.name,
+    google_id: SecureRandom.uuid,
+    email_address: Faker::Internet.unique.email,
+    avatar_url: Faker::Avatar.image)
   Channel.create(name: Faker::ProgrammingLanguage.name)
 end
 

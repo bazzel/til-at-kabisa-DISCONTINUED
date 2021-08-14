@@ -1,0 +1,6 @@
+<%- flash.filter { |key, _message| key.in?(%w(notice alert error)) }.each do |key, message| %>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <%= message %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>

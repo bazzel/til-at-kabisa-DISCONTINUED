@@ -32,7 +32,6 @@ gem "rubocop-rails", require: false
 gem "rubocop-performance", require: false
 gem "hotwire-rails" # HTML over the wire.
 gem "administrate" # A framework for creating flexible, powerful admin dashboards in Rails.
-gem "dotenv-rails", "~> 2.1", ">= 2.1.1" # Autoload dotenv in Rails.
 gem "trix"
 gem "faker"
 gem "kaminari" # Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated paginator for Rails 4+
@@ -41,12 +40,14 @@ gem "view_component", require: "view_component/engine"
 gem "jsonapi-rails"
 gem "rswag-api"
 gem "rswag-ui"
+gem "google_sign_in"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   gem "rspec-rails"
   gem "rswag-specs"
+  gem "dotenv-rails", "~> 2.1", ">= 2.1.1" # Autoload dotenv in Rails.
 end
 
 group :development do
