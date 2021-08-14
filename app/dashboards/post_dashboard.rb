@@ -14,8 +14,14 @@ class PostDashboard < Administrate::BaseDashboard
     title: Field::String,
     slug: Field::String,
     body: TrixField,
-    author: Field::BelongsTo,
-    channel: Field::BelongsTo,
+    author: Field::BelongsTo.with_options(
+      order: :name,
+      searchable: true
+    ),
+    channel: Field::BelongsTo.with_options(
+      order: :name,
+      searchable: true
+    ),
     created_at: Field::Date,
     updated_at: Field::Date,
   }.freeze
