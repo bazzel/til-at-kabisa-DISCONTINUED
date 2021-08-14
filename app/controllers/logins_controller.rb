@@ -13,14 +13,7 @@ class LoginsController < ApplicationController
   private
     def authenticate_with_google
       if id_token = flash[:google_sign_in]["id_token"]
-        identity = GoogleSignIn::Identity.new(id_token)
-        Author.find_or_initialize_by(google_id: identity.user_id).tap do |author|
-          author.name = identity.name
-          author.email_address = identity.email_address
-          author.avatar_url = identity.avatar_url
-          author.save
-        end
-
+        Author.find_or_create_by_identity(GoogleSignIn::Identity.new(id_token))
       elsif error = flash[:google_sign_in]["error"]
         logger.error "Google authentication error: #{error}"
         nil
