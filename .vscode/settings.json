@@ -1,0 +1,6 @@
+{
+  "prettier.requireConfig": true,
+  "i18n-ally.localesPaths": [
+    "config/locales"
+  ]
+}

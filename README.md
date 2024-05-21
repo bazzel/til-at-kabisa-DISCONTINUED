@@ -1,24 +1,55 @@
-# README
+# TIL@Kabisa
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Introduction
 
-Things you may want to cover:
+This is a simple Ruby on Rails application that shows 'Today I Learned''s.
 
-- Ruby version
+## Prerequisites
 
-- System dependencies
+- Install [all requirements](https://gorails.com/setup/macos/14-sonoma) on your machine
+- PostgreSQL (instruction in the link above, but you can also use [asdf-postgres](https://github.com/smashedtoatoms/asdf-postgres) instead)
 
-- Configuration
+## Installation
 
-- Database creation
+```
+$ git clone https://github.com/bazzel/til-at-kabisa.git
+$ cd til-at-kabisa
+$ asdf install # assuming you use asdf.
+$ pg_ctl start # when you need to start your PostgreSQL server.
+$ bundle install
+$ yarn install
+```
 
-- Database initialization
+If you use a different username than `postgres` to connect to your PostgreSQL server, update the `username` key in `config/database.yml`.
 
-- How to run the test suite
+```
+$ bin/rails db:setup
+```
 
-- Services (job queues, cache servers, search engines, etc.)
+## Running / Development
 
-- Deployment instructions
+- `$ bin/rails s`
+- `$ bin/webpack-dev-server`
+- Visit your app at [http://localhost:3000](http://localhost:3000).
+
+### Populate the database
+
+The project comes with a `seed.rb` which you can use to populate your development environment. This seed is automatically used when running `bin/rails db:setup`. To (re-)run it at a later moment:
+
+`$ bin/rails db:seed`
+
+## Hosting
+
+The application has been deployed to the following environments (not all may be available at the time of writing):
+
+- ~~[Render](https://render.com/)~~
+- ~~[Koyeb](https://www.koyeb.com/)~~
+- ~~[Fly.io](https://fly.io/)~~
+
+## Credits
+
+- ...
+
+## Further reading
 
 - ...
